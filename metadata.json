@@ -1,0 +1,6 @@
+{
+  "name": "Prisha Skin & Hair Clinic",
+  "description": "Premium patient care portal and clinic website for Dr. Ankit Kumar Jain's Prisha Skin & Hair Clinic, Bhopal, featuring online appointment booking, before & after results, and a secure dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

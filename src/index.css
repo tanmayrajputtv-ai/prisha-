@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  
+  --color-primary: #0066FF;   /* Bright Electric Blue */
+  --color-secondary: #000000; /* Solid Deep Black */
+  --color-accent: #0066FF;    /* Sleek blue accents */
+  --color-blush: #E5E7EB;     /* Medium Gray border-tone */
+  --color-dark: #000000;      /* Rich Solid Black */
+  --color-light: #F9FAFB;     /* Modern Light Gray */
+  --color-cream: #F3F4F6;     /* Subtle Off-white Gray */
+  --color-paragraph: #374151;  /* Slate text gray */
+}
+
+@layer base {
+  body {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+  }
+}
+
+/* Custom fade in and translation keyframe */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulse animation for standard action indices */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(0, 102, 255, 0);
+  }
+}
+
+/* Custom premium styling rule sets matching user guidelines */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: var(--color-dark);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  color: #6B7280; /* Gray-dark */
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.btn-primary {
+  background-color: var(--color-dark);
+  color: white;
+  border-radius: 8px; /* Blocky / sharp border radius */
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 2px solid var(--color-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary); /* Electric blue hover */
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.2);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+  border-radius: 8px;
+  padding: 0.75rem 1.875rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-dark);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #E5E7EB; /* Elegant 1px boundaries instead of a weak shadow */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  padding: 2.25rem;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  border-color: var(--color-primary);
+}
